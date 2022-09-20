@@ -1,4 +1,5 @@
 ﻿using Competitive_Programming.Math;
+using Competitive_Programming.Recursion;
 
 namespace Competitive_Programming
 {
@@ -6,7 +7,7 @@ namespace Competitive_Programming
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Palindrome.IsPalindrome(5555));
+            Console.WriteLine(FibunacciRecursion.Fibunacci(6));
             Console.WriteLine("Hello, World!");
             Console.ReadKey();
         }
