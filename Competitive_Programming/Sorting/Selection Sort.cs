@@ -20,16 +20,10 @@ namespace Competitive_Programming.Sorting
                         minIndex = j;
                 }
                 if (minIndex != i)
-                    swap(array, minIndex, i);
+                    Utility.Swap(array, minIndex, i);
             }
 
             return array;
-        }
-        public static void swap(int[] array, int i, int j)
-        {
-            int temp = array[i];
-            array[i] = array[j];
-            array[j] = temp;
         }
     }
 }
