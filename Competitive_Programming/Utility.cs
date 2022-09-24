@@ -9,11 +9,13 @@ namespace Competitive_Programming
     public static class Utility
     {
 
-        public static void Swap(int[] array, int i, int j)
+        public static int[] Swap(int[] array, int i, int j)
         {
             int temp = array[i];
             array[i] = array[j];
             array[j] = temp;
+
+            return array;
         }
     }
 }
