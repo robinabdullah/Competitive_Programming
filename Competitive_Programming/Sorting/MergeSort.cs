@@ -8,29 +8,40 @@ namespace Competitive_Programming.Sorting
 {
     public class MergeSort
     {
-        public static int[] Sort(int[] array, int n)
+        public static void Sort(int[] array, int leftIndex, int rightIndex)
         {
-            if (array.Length != 2)
-            {
-                var divided = array.Take(n / 2).ToArray();
+            if (leftIndex >= rightIndex)
+                return;
 
-                return Sort(divided, divided.Length);
-            }
+            int midIndex = (leftIndex + rightIndex) / 2;
+            Sort(array, leftIndex, midIndex);
+            Sort(array, midIndex + 1, rightIndex);
+        }
 
-            for (int i = 0; i < n; i++)
+        private void Merge(int[] array, int leftIndex, int rightIndex)
+        {
+            int[] arrayNew = new int[array.Length];
+            int left = leftIndex;
+            int right = rightIndex;
+            int index = leftIndex;
+
+            while (left <= right && right <= rightIndex)
             {
-                if (array[i] > array[i+1])
+                if (array[left] > array[right])
                 {
-
+                    arrayNew[index] = array[left];
+                    left++;
                 }
+                else
+                {
+                    arrayNew[index] = array[right];
+                    right++;
+                }
+                index++;
+            }
 
-            }
-            if (array[0] > array[1])
-            {
-                return Utility.Swap(array, 0, 1);
-            }
-            else return array;
-            
+            //while()
+
         }
     }
 }
